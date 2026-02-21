@@ -5,9 +5,14 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import java.util.List;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Advisor {
+
+    @OneToMany(mappedBy="advisor")
+    private List<Client> Client;
 
     @Id
     @GeneratedValue()
